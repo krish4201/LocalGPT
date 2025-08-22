@@ -1,5 +1,14 @@
 # Install gitpython if not already installed
 # !pip install gitpython
+import subprocess
+import sys
+
+# Function to install a package
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Example: install gitpython
+install("gitpython")
 
 from git import Repo
 
