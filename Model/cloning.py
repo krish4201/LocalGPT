@@ -10,12 +10,18 @@ def install(package):
 # Example: install gitpython
 install("gitpython")
 
+import shutil
 from git import Repo
 
+local_path = "./"  # current folder
 repo_url = "https://huggingface.co/openai/gpt-oss-120b"
-local_path = "./gpt-oss-120b"  # NEW empty folder
+
+# Delete folder contents (be careful!)
+shutil.rmtree(local_path, ignore_errors=True)
 
 Repo.clone_from(repo_url, local_path)
-print(f"Cloned to {local_path}")
+print("Repo cloned successfully!")
+
+
 
 
